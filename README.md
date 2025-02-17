@@ -30,6 +30,6 @@ dotnet build tenz/
 dotnet run --project tenz/ --framework net9.0-maccatalyst
 ```
 
-
 # License
 
+This project has MIT license.
