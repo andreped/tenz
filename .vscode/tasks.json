@@ -1,0 +1,44 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "build",
+      "command": "dotnet",
+      "type": "process",
+      "args": [
+        "build",
+        "${workspaceFolder}/tenz",
+        "--framework",
+        "net9.0-android"
+      ],
+      "problemMatcher": "$msCompile"
+    },
+    {
+      "label": "publish",
+      "command": "dotnet",
+      "type": "process",
+      "args": [
+        "publish",
+        "${workspaceFolder}/tenz",
+        "--framework",
+        "net9.0-android",
+        "--configuration",
+        "Release"
+      ],
+      "problemMatcher": "$msCompile"
+    },
+    {
+      "label": "install",
+      "command": "adb",
+      "type": "process",
+      "args": [
+        "-s",
+        "emulator-5554", // Replace with your emulator's serial number
+        "install",
+        "-r",
+        "${workspaceFolder}/tenz/bin/Release/net9.0-android/publish/com.andreped.tenz-Signed.apk"
+      ],
+      "problemMatcher": []
+    }
+  ]
+}
