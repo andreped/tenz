@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ResourceDictionary xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
+
+    <Color x:Key="PageBackgroundColor">#121212</Color>
+    <Color x:Key="ChatBubbleBackgroundColor">#1E1E1E</Color>
+    <Color x:Key="InputBackgroundColor">#333333</Color>
+
+    <Style TargetType="ContentPage">
+        <Setter Property="BackgroundColor" Value="{StaticResource PageBackgroundColor}" />
+    </Style>
+</ResourceDictionary>
