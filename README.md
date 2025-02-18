@@ -20,15 +20,17 @@ rm dotnet-sdk-9.0.200-osx-arm64.pkg
 sudo $(which dotnet) workload install maui
 ```
 
-3. Build app:
+3. Build Mac Catalyst app:
 ```
-dotnet build tenz/
+dotnet build tenz/ --framework net9.0-maccatalyst
 ```
 
 4. Run Mac Catalyst app:
 ```
 dotnet run --project tenz/ --framework net9.0-maccatalyst
 ```
+
+If you want to build and run against a different OS, you can replace framework with for instance `net9.0-android`.
 
 # License
 

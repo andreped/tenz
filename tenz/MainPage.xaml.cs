@@ -1,24 +1,21 @@
-﻿namespace tenz;
+﻿using Microsoft.Maui.Controls;
+using tenz.ViewModels;
+
+namespace tenz;
 
 public partial class MainPage : ContentPage
 {
-	int count = 0;
+    private MainPageViewModel ViewModel;
 
-	public MainPage()
-	{
-		InitializeComponent();
-	}
+    public MainPage()
+    {
+        InitializeComponent();
+        ViewModel = new MainPageViewModel();
+        BindingContext = ViewModel;
+    }
 
-	private void OnCounterClicked(object sender, EventArgs e)
-	{
-		count++;
-
-		if (count == 1)
-			CounterBtn.Text = $"Clicked {count} time";
-		else
-			CounterBtn.Text = $"Clicked {count} times";
-
-		SemanticScreenReader.Announce(CounterBtn.Text);
-	}
+    private async void OnSendClicked(object sender, EventArgs e)
+    {
+        await ViewModel.SendMessage();
+    }
 }
-
